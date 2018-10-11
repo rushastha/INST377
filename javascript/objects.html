@@ -21,10 +21,16 @@
 
 
 
+<<<<<<< HEAD
 function Square (width, height, color, classname){ //constructor for propetry Square //related to css (width height)
+=======
+function Square (width, height, color, middlename, classname){
+>>>>>>> e1d9cdec145a55d635ff28d4143c7d043c5e66d4
 	this.width = width;
 	this.height = height;
 	this.background = color;
+
+	Square.prototype.middlename = middlename
 
 	// creates a div tag inside the "container" object.
 	sq = document.getElementById("container").appendChild(document.createElement("div"))
@@ -37,6 +43,7 @@ function Square (width, height, color, classname){ //constructor for propetry Sq
 		this.background = c;
 		sq.style.background = this.background;
 	}
+<<<<<<< HEAD
 	// Task 3 - to put text in the box
 	this.putText = function(t){
 		sq.innerHTML = t }
@@ -52,13 +59,32 @@ function Square (width, height, color, classname){ //constructor for propetry Sq
 
 s1 = new Square("200px", "50px", "grey", "square")
 //
+=======
+	// Task 3
+
+		Square.prototype.putText = function(t, c) {
+			sq.innerHTML = t
+			sq.style.color = c
+		}
+
+}
+
+s1 = new Square("200px", "50px", "grey", "bob", "square")
+>>>>>>> e1d9cdec145a55d635ff28d4143c7d043c5e66d4
 
 // Task 1 - in browser - console type s1.changeColor('red')--(since we declared s1 above)
 
+<<<<<<< HEAD
 // Task 2 - create new instance in this object (new square)
 s2 = new Square("100px", "100px", "grey", "square")
 //in console --s2.changeColor('red')
 
+=======
+// Task 1
+
+// Task 2
+s2 = new Square("100px", "100px", "blue", "annette", "square")
+>>>>>>> e1d9cdec145a55d635ff28d4143c7d043c5e66d4
 
 </script>
 

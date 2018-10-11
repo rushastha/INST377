@@ -1,9 +1,15 @@
 <html>
+<<<<<<< HEAD
+=======
+<head>
+</head>
+>>>>>>> e1d9cdec145a55d635ff28d4143c7d043c5e66d4
 <body onload="dostuff()">
 
 <div id="test" class="t_class">INST377</div> <!-- before the script tag -->
 
 <script>
+<<<<<<< HEAD
 function dostuff() { //putting function
     var t = document.getElementById("test").innerHTML; //assigning value into a variable t (we have an alert )
     alert(t);
@@ -17,6 +23,21 @@ function dostuff() { //putting function
 
 <div id="test1" class="t_class">Late DIV</div> <!-- doesn't run it doesn't exist when the javascript runs! this div is after the script tag because of order of operation-->
 <!-- YOU CAN EITHER MOVE THE DIV UP RATHER - PUT THE SCRIPT TO THE VERY END OF THE DOCUMENT -->
+=======
+function dostuff(){
+  var t = document.getElementById("test").innerHTML;
+  alert(t);
+  console.log("The value of the TEST object is " + t);
+  document.getElementById("test").innerHTML = t + " HELLO I AM DYNAMIC!";
+  var f = document.getElementById("test").innerHTML;
+
+  document.getElementById("test1").innerHTML = f + "Hello? Did this work?";
+}
+</script>
+
+<div id="test1" class="t_class">Late DIV</div>
+
+>>>>>>> e1d9cdec145a55d635ff28d4143c7d043c5e66d4
 </body>
 
 </html>

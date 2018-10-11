@@ -1,6 +1,7 @@
 <html>
 <body>
 
+<<<<<<< HEAD
 <div id="test" class="t_class">I am in the HTML</div> <!-- NOT going to show if the javascript is run -->
 
 <script>
@@ -9,6 +10,16 @@
 //document.getElementsByTagName("div")[0].innerHTML = "Hello by Tag"; //return an array so you have to specify array
 document.getElementsByClassName("t_class")[0].innerHTML = "Hello by Class"; //to access the first thing, specify which array (since it is first, write 0 inside [])
 //document.getElementsByClassName("t_class")[0].innerHTML = "<p>Hello by <em>Class</em></p>"; //can have html tags, but it won't show on the webpage
+=======
+<div id="test" class="t_class">I am in the HTML.</div>
+
+<script>
+
+//document.getElementById("test").innerHTML = "Hello by ID";
+//document.getElementsByTagName("div")[0].innerHTML = "Hello by Tag";
+document.getElementsByClassName("t_class")[0].innerHTML = "<p>Hello by <em>Class</em></p>";
+
+>>>>>>> e1d9cdec145a55d635ff28d4143c7d043c5e66d4
 </script>
 
 </body>

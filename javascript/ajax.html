@@ -35,20 +35,25 @@
 
 
 <script>
-
-// function showSentence(){
-// 	var xhttp = new XMLHttpRequest();
-// 	xhttp.onreadystatechange = function() {
-// 		if (this.readyState == 4 && this.status == 200) {
-// 			document.getElementById("square").innerHTML = this.responseText;
-// 		}
-// 	};
-// 	xhttp.open("GET", "test.txt", true);
-// 	xhttp.send();
-// }
+/*
+function showSentence(){
+ 	var xhttp = new XMLHttpRequest();
+ 	xhttp.onreadystatechange = function() {
+ 		if (this.readyState == 4 && this.status == 200) {
+ 			document.getElementById("square").innerHTML = this.responseText;
+ 		}
+ 	};
+ 	xhttp.open("GET", "test.txt", true);
+ 	xhttp.send();
+}
+*/
 
 
 function trigger(){
+<<<<<<< HEAD
+=======
+	//showSentence();
+>>>>>>> e1d9cdec145a55d635ff28d4143c7d043c5e66d4
 	showSentence("json/data.json", test1);
 }
 
@@ -66,11 +71,17 @@ function showSentence(url, func){
 function test1(xhttps){
 	document.getElementById("square").innerHTML = xhttps.responseText;
 	//var data = eval(xhttps.responseText);
+<<<<<<< HEAD
 	var data = JSON.parse(xhttps.responseText); //makes sure its json code - checks
 //	eval("alert('boo! i can be bad!')");
 	alert(“Response has “ + data.length + “ entries.”)
 
 
+=======
+	var data = JSON.parse(xhttps.responseText);
+	//eval("alert('BOO! I could be bad!')");
+	alert("Response has " + data.length + " entries.")
+>>>>>>> e1d9cdec145a55d635ff28d4143c7d043c5e66d4
 }
 
 function test2(xhttps){

@@ -1,8 +1,13 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
+=======
+<!DOCTYPE html encoding='UTF8'>
+>>>>>>> e1d9cdec145a55d635ff28d4143c7d043c5e66d4
 <html>
 <body>
 
 <div id="test1" class="t_class">INST377-1</div>
+<<<<<<< HEAD
 <div id="test2" class="t_class1">INST377-2</div> <!--different class, so in console it shows only 1st and 3rd line of html -->
 <div id="test3" class="t_class">INST377-3</div>
 
@@ -11,6 +16,16 @@
     var t = document.getElementsByClassName("t_class"); //t is the colleciton of elements
 console.log(t); //all variables
 console.log(t[0]); //printing each one out
+=======
+<div id="test2" class="t_class1">INST377-2</div>
+<div id="test3" class="t_class">INST377-3</div>
+
+<script>
+//var t = document.getElementsByTagName("div");
+var t = document.getElementsByClassName("t_class");
+console.log(t);
+console.log(t[0]);
+>>>>>>> e1d9cdec145a55d635ff28d4143c7d043c5e66d4
 console.log(t[1]);
 console.log(t[2]);
 console.log(t[0].innerHTML); //t index and printing in html page
