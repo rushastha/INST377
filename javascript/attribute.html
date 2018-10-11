@@ -17,7 +17,7 @@
 		.round {
 			border-radius: 20px;
 		}
-		
+
 	</style>
 </head>
 
@@ -29,7 +29,17 @@
 	</div>
 
 <script>
+	/*var tag = document.getElementsByTagName('p')[0]; //getting the paragraph from html p
+	console.log(tag);
+	document.getElementById('square').appendChild(tag); //moving things
+	tag.style.color = 'red'; //changing the style of the font - color*/
 
+	var tag = document.getElementsByTagName('p')[0]; //getting the paragraph from html p tag
+	console.log(tag.parentNode);
+	var tag2 = tag;
+	document.getElementById('square').appendChild(tag2); //moving things
+	tag.style.color = 'pink';
+	console.tog(tag.parentNode);
 // document.getElementById("square").setAttribute("style", "");
 // document.getElementById("square").setAttribute("style", "background:red");
 
@@ -40,7 +50,7 @@
 
 /*
 	Try to move the sentence inside the sentence inside the P tag so it is overlapping with the square. Change the color of the sentence so it is visible inside the box.
-	Your code goes below.	
+	Your code goes below.
 */
 
 </script>

@@ -54,33 +54,34 @@ CREATE TABLE address (
   KEY idx_fk_city_id (city_id),
   /*!50705 SPATIAL KEY `idx_location` (location),*/
   CONSTRAINT `fk_address_city` FOREIGN KEY (city_id) REFERENCES city (city_id) ON DELETE RESTRICT ON UPDATE CASCADE
-)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+)ENGINE=InnoDB DEFAULT CHARSET=utf8; -- IF YOU DELETE THE CITY, LOSES "INTEGRITY" - MY ADDRESS WOULD BE ORPHAN
+-- FOREIGN KEY SAYS ITS CONNECTED OTHER TABLES
 
 --
 -- Table structure for table `category`
 --
 
 CREATE TABLE category (
-  category_id TINYINT UNSIGNED NOT NULL AUTO_INCREMENT,
-  name VARCHAR(25) NOT NULL,
-  last_update TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  category_id TINYINT UNSIGNED NOT NULL AUTO_INCREMENT,  #always have a primary keys) #anything with default value, has auto increment
+  name VARCHAR(25) NOT NULL, 
+  last_update TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, #time stamp - not null - has to has value in it
   PRIMARY KEY  (category_id)
-)ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
+)ENGINE=InnoDB DEFAULT CHARSET=utf8; -- "utf8" UNIVERSAL WAY TO INPUT STUFF
 --
 -- Table structure for table `city`
 --
 
 CREATE TABLE city (
   city_id SMALLINT UNSIGNED NOT NULL AUTO_INCREMENT,
-  city VARCHAR(50) NOT NULL,
-  country_id SMALLINT UNSIGNED NOT NULL,
+  city VARCHAR(50) NOT NULL, #varchar datatype for variable character string - upto 50 character long
+  country_id SMALLINT UNSIGNED NOT NULL, #not null - it has to has data in it. it is a constraint
   last_update TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY  (city_id),
+  PRIMARY KEY  (city_id), #why update? accountability purpose, when the last person to update, had updated it
   KEY idx_fk_country_id (country_id),
   CONSTRAINT `fk_city_country` FOREIGN KEY (country_id) REFERENCES country (country_id) ON DELETE RESTRICT ON UPDATE CASCADE
-)ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
+)ENGINE=InnoDB DEFAULT CHARSET=utf8; #default charset = specified number - can be used universally 
+#constraint for foreign key - pointing to another table - between city and country
+#on delete restrict on update cascade - so that children depended on parents value are not left orphan 
 --
 -- Table structure for table `country`
 --

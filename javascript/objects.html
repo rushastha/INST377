@@ -3,13 +3,13 @@
 	<style type="text/css">
 		.square {
 			margin-top: 50px;
-			margin-left: 100px;			
+			margin-left: 100px;
 		}
 
 		div {
 			margin-bottom: 20px;
 		}
-		
+
 	</style>
 </head>
 
@@ -21,7 +21,7 @@
 
 
 
-function Square (width, height, color, classname){
+function Square (width, height, color, classname){ //constructor for propetry Square //related to css (width height)
 	this.width = width;
 	this.height = height;
 	this.background = color;
@@ -33,19 +33,31 @@ function Square (width, height, color, classname){
 	sq.style.width = this.width;
 	sq.style.background = this.background;
 
-	this.changeColor = function(c){
+	this.changeColor = function(c){ //this.smth - method
 		this.background = c;
 		sq.style.background = this.background;
 	}
-	// Task 3
+	// Task 3 - to put text in the box
+	this.putText = function(t){
+		sq.innerHTML = t }
+		//access the atrribue in console and manipulate the div id
+		//evrytime i copy, create a new one - we get added copy (right now we have two copy of function)
+
+//can also do
+	/*	Square.protoype.putText = function(t, c) {
+			sq.innerHTML = t
+			sq.style.clor = c
+		} */
 }
 
 s1 = new Square("200px", "50px", "grey", "square")
+//
 
+// Task 1 - in browser - console type s1.changeColor('red')--(since we declared s1 above)
 
-// Task 1
-
-// Task 2
+// Task 2 - create new instance in this object (new square)
+s2 = new Square("100px", "100px", "grey", "square")
+//in console --s2.changeColor('red')
 
 
 </script>

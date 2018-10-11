@@ -6,9 +6,13 @@ div {
 	margin-bottom: 20px;
 }
 </style>
+<script>
+<?php
+echo 'alert(HELLO!)';
+ ?>
 <body>
 
-<?php 
+<?php
 
 # Comments can be doen with different symbols.
 /* This is also possible */
@@ -49,11 +53,11 @@ function test_func($text){
 	echo "$d is a global variable, but cannot be accessed directly inside a function.";
 
 	// once declared as "global" inside a function, you can access to it.
-	global $d;	
+	global $d;
 	echo "<div>After decaring d as global: <strong>$d</strong>";
 
 	// local variable.
-	$local = 3;	
+	$local = 3;
 	echo "<div>$local is a local variable</div>";
 	$local++;
 
