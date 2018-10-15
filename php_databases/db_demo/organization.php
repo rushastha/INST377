@@ -7,7 +7,7 @@
  * we define the method jsonSerialize.
  */
 class Organization implements JsonSerializable {
-  public $profile_id;
+  public $profile_id = -1; //this will always be safe
   public $region;
   public $country;
   public $country_income_level;
@@ -140,11 +140,47 @@ class Organization implements JsonSerializable {
 
   // TODO #1: Implement a function to save an new organization
   // return number of rows inserted
+  public function save(mysqli $conn) { //creating connection to sql
+  $stmt = $conn->prepare("INSERT INTO organizations
+                        (organization_name, organization_type, region,
+                          country, country_income_level, sectors,
+                          description, city, state_or_region,
+                          founding_year, size, type_of_data_used)
+                          VALUES (?, ?, ?,
+                                  ?, ?, ?,
+                                  ?, ?, ?,
+                                  ?, ?, ?)");
+  /*HAVE 12 OF THESE HAVE 12 OF THOSE TO DO:*/
+  //when accepting user input use bind_param, so they don't break your statement/code, delete your database/table
+    $stmt->bind_param("sssssssssiss", //have it corresponding to the values above
+      $this->organization_name,
+      $this->organization_type,
+      $this->region,
+      $this->country,
+      $this->country_income_level,
+      $this->sector,
+      $this->description,
+      $this->city,
+      $this->state_or_region,
+      $this->founding_year,
+      $this->size,
+      $this->$type_of_data_used);
+    $stmt->execute(); //have to close your stmt
+    this->profile_id = $stmt->last_id;//get it from the users
+    return $stmt->affected_rows;//number of rows that were inserted
+
+  }
 
   // TODO #2: Implement a function to delete an organization.
   // return number of rows deleted
+  public function delete(mysqli $conn) { //creating connection to sql
+    $stmt = $conn->prepare("DELETE FROM organizations WHERE profile_id = ?");
+    $stmt->bind_param("i", $this->profile_id= ? //have it corresponding to the values above
+
+
+
 
   // TODO #3: Implement a function to save changes to an existing organization
   // return number of rows updated
-}
+//check prof's work beb 
  ?>
